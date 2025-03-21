@@ -1,4 +1,3 @@
-Sure! Here’s a simpler README file focusing on the purpose of your project:
 
 ---
 
@@ -55,5 +54,3 @@ After training, the model will output the training loss for each epoch and the a
 This project is licensed under the MIT License.
 
 ---
-
-Feel free to modify any part of it or add more details if needed!
