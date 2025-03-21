@@ -1,13 +1,18 @@
+Sure! Here’s a simpler README file focusing on the purpose of your project:
 
 ---
 
-# Simple CNN for CIFAR-10 Classification
+# Simple CNN for CIFAR-10 Classification with Selection Mechanism
 
-This repository contains a simple convolutional neural network (CNN) implemented in PyTorch to classify images from the CIFAR-10 dataset. The model not only predicts the class of the input images but also selectively retains certain outputs based on a learned selection mechanism.
+This project implements a simple convolutional neural network (CNN) for classifying images in the CIFAR-10 dataset. The key enhancement of this model is the addition of a selection layer for each output head, allowing the network to determine whether to retain or discard each output.
+
+## Purpose
+
+The aim of this project is to perform image classification while adding an extra layer in the output that helps decide whether to keep the predictions or not. This mechanism can potentially improve the model's performance by focusing on the most relevant outputs.
 
 ## Requirements
 
-To run this code, you need to have the following libraries installed:
+To run this code, you will need:
 
 - Python 3.x
 - PyTorch
@@ -21,49 +26,34 @@ pip install torch torchvision
 
 ## Dataset
 
-This code uses the CIFAR-10 dataset, which contains 60,000 32x32 color images in 10 classes, with 6,000 images per class. The dataset is automatically downloaded if it's not already present.
+The CIFAR-10 dataset consists of 60,000 32x32 color images across 10 different classes. This code will automatically download the dataset if it is not already present.
 
-## Code Overview
+## How to Use
 
-1. **Data Loading and Transformation:**
-   - The CIFAR-10 dataset is loaded and transformed using normalization.
-   - A DataLoader is created for both the training and testing datasets.
+1. **Clone the repository** to your local machine:
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/SimpleSelect.git
+   ```
 
-2. **Defining the Neural Network:**
-   - A simple CNN architecture is defined with two convolutional layers followed by two fully connected layers.
-   - The model outputs predictions along with a selection signal for output filtering.
+2. **Navigate to the project directory**:
+   ```bash
+   cd SimpleSelect
+   ```
 
-3. **Training Function (`train_model`):**
-   - The model is trained for a specified number of epochs.
-   - Both the main loss (for the actual class predictions) and a selection loss (for filtered predictions) are calculated and used for optimization.
-
-4. **Testing Function (`test_model`):**
-   - The model's performance is evaluated on the test dataset.
-   - Accuracy is calculated for both the original model outputs and the selectively retained outputs.
-
-## Usage
-
-To run the training and testing of the model, simply execute the script. You can specify the number of epochs in the `train_model` function:
-
-```python
-train_model(num_epochs=10)  # Change 10 to any number of epochs you wish to train
-```
-
-### Example
-
-To train the model for 1 epoch and evaluate it, you can use:
-
-```python
-train_model(num_epochs=1)
-test_model()
-```
+3. **Run the training and testing**:
+   You can specify the number of epochs in the `train_model` function in the script. By default, the code is set to run for 10 epochs.
+   ```python
+   train_model(num_epochs=10)
+   ```
 
 ## Output
 
-The model will print the loss at the end of each training epoch, along with the accuracy of both the original and retained models after testing.
+After training, the model will output the training loss for each epoch and the accuracy for both the original model predictions and the retained predictions.
 
 ## License
 
 This project is licensed under the MIT License.
 
 ---
+
+Feel free to modify any part of it or add more details if needed!
